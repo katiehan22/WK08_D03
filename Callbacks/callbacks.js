@@ -4,6 +4,8 @@ class Clock {
     this.hours = date.getHours();
     this.minutes = date.getMinutes();
     this.seconds = date.getSeconds();
+    this.printTime();
+    setInterval(this._tick.bind(this), 1000);
   }
 
   printTime() {
@@ -16,7 +18,7 @@ class Clock {
       this.minutes = 0;
       this.seconds = 0;
     }
-
+    
     if(this.seconds === 59) {
       if(this.minutes === 59) {
         this.hours++;
@@ -32,3 +34,4 @@ class Clock {
     this.printTime();
   }
 }
+
